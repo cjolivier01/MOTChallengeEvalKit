@@ -84,15 +84,62 @@ class MOTVisualizer(Visualizer):
 		return im
 
 if __name__ == "__main__":
-	visualizer = MOTVisualizer(
-		seqName = "MOT16-02",
-		FilePath ="data/MOT16/train/MOT16-02/gt/gt.txt",
-		image_dir = "data/MOT16/train/MOT16-02/img1",
-		mode = "gt",
-		output_dir  = "vid")
+    # visualizer = MOTVisualizer(
+    # 	seqName = "MOT17-05-FRCNN",
+    # 	FilePath ="/mnt/data/datasets/MOT17/train/MOT17-05-FRCNN/gt/gt.txt",
+    # 	image_dir = "/mnt/data/datasets/MOT17/train/MOT17-05-FRCNN/img1",
+    # 	mode = "gt",
+    # 	output_dir  = "vid")
 
-	visualizer.generateVideo(
-	        displayTime = True,
-	        displayName = "traj",
-	        showOccluder = True,
-	        fps = 25 )
+    # /mnt/data/src/datasets/hockeyTrackingDataset/train/allstar_2019_002
+    # visualizer = MOTVisualizer(
+    # 	seqName = "allstar_2019_006",
+    # 	FilePath ="/mnt/data/src/datasets/hockeyTrackingDataset/train/allstar_2019_006/gt.txt",
+    # 	image_dir = "/mnt/data/src/datasets/hockeyTrackingDataset/train/allstar_2019_006/img1",
+    # 	mode = "gt",
+    # 	output_dir  = "vid")
+
+    # visualizer = MOTVisualizer(
+    # 	seqName = "CGY_vs_DAL_003",
+    # 	FilePath ="/mnt/data/src/datasets/hockeyTrackingDataset/train/CGY_vs_DAL_003/gt.txt",
+    # 	image_dir = "/mnt/data/src/datasets/hockeyTrackingDataset/train/CGY_vs_DAL_003/img1",
+    # 	mode = "gt",
+    # 	output_dir  = "vid")
+    for i in range(1, 4):
+        print(f"STL_VS_SAJ_2019_00{i}")
+        visualizer = MOTVisualizer(
+            seqName = f"STL_VS_SAJ_2019_00{i}",
+            FilePath =f"/mnt/data/src/datasets/hockeyTrackingDataset/train/STL_VS_SAJ_2019_00{i}/gt.txt",
+            image_dir = f"/mnt/data/src/datasets/hockeyTrackingDataset/train/STL_VS_SAJ_2019_00{i}/img1",
+            mode = "gt",
+            output_dir  = "vid")
+
+        #prefixes = ["allstar_2019_00", "CAR_VS_NYR_00"]
+        # prefixes = ["allstar_2019_00"]
+        # for prefix in prefixes:
+        #     for i in range(1, 7):
+        #         seqName = f"{prefix}{i}"
+        #         FilePath = (
+        #             f"/mnt/data/src/datasets/hockeyTrackingDataset/train/{prefix}{i}/gt.txt",
+        #         )
+        #         image_dir = (
+        #             f"/mnt/data/src/datasets/hockeyTrackingDataset/train/{prefix}{i}/img1",
+        #         )
+
+        #         visualizer = MOTVisualizer(
+        #             seqName=seqName,
+        #             FilePath=FilePath,
+        #             image_dir=image_dir,
+        #             mode="gt",
+        #             output_dir="vid",
+        #         )
+
+        #         visualizer.generateVideo(
+        #             displayTime=True, displayName="traj", showOccluder=True, fps=30
+        #         )
+
+        visualizer.generateVideo(
+            displayTime = True,
+            displayName = "traj",
+            showOccluder = True,
+            fps = 60 )
