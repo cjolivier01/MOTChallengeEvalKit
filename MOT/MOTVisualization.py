@@ -105,12 +105,12 @@ if __name__ == "__main__":
     # 	image_dir = "/mnt/data/src/datasets/hockeyTrackingDataset/train/CGY_vs_DAL_003/img1",
     # 	mode = "gt",
     # 	output_dir  = "vid")
-    for i in range(1, 4):
-        print(f"STL_VS_SAJ_2019_00{i}")
+    for i in range(1, 2):
+        print(f"PIT_VS_WAS_2016_00{i}")
         visualizer = MOTVisualizer(
-            seqName = f"STL_VS_SAJ_2019_00{i}",
-            FilePath =f"/mnt/data/src/datasets/hockeyTrackingDataset/train/STL_VS_SAJ_2019_00{i}/gt.txt",
-            image_dir = f"/mnt/data/src/datasets/hockeyTrackingDataset/train/STL_VS_SAJ_2019_00{i}/img1",
+            seqName = f"PIT_VS_WAS_2016_00{i}",
+            FilePath =f"/mnt/data/src/datasets/hockeyTrackingDataset/test/PIT_VS_WAS_2016_00{i}/gt.txt",
+            image_dir = f"/mnt/data/src/datasets/hockeyTrackingDataset/test/PIT_VS_WAS_2016_00{i}/img1",
             mode = "gt",
             output_dir  = "vid")
 
