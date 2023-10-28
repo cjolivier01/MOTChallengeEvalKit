@@ -105,12 +105,20 @@ if __name__ == "__main__":
     # 	image_dir = "/mnt/data/src/datasets/hockeyTrackingDataset/train/CGY_vs_DAL_003/img1",
     # 	mode = "gt",
     # 	output_dir  = "vid")
-    for i in range(1, 2):
-        print(f"PIT_VS_WAS_2016_00{i}")
+    #for i in range(1, 2):
+    if True:
+        #print(f"PIT_VS_WAS_2016_00{i}")
+        # visualizer = MOTVisualizer(
+        #     seqName = f"PIT_VS_WAS_2016_00{i}",
+        #     FilePath =f"/mnt/data/src/datasets/hockeyTrackingDataset/test/PIT_VS_WAS_2016_00{i}/gt.txt",
+        #     image_dir = f"/mnt/data/src/datasets/hockeyTrackingDataset/test/PIT_VS_WAS_2016_00{i}/img1",
+        #     mode = "gt",
+        #     output_dir  = "vid")
+
         visualizer = MOTVisualizer(
-            seqName = f"PIT_VS_WAS_2016_00{i}",
-            FilePath =f"/mnt/data/src/datasets/hockeyTrackingDataset/test/PIT_VS_WAS_2016_00{i}/gt.txt",
-            image_dir = f"/mnt/data/src/datasets/hockeyTrackingDataset/test/PIT_VS_WAS_2016_00{i}/img1",
+            seqName = f"roseville_at10mins_for_30secs",
+            FilePath =f"/mnt/data/datasets/norcal/train/roseville_at10mins_for_30secs/gt/gt.txt",
+            image_dir = f"/mnt/data/datasets/norcal/train/roseville_at10mins_for_30secs/img1",
             mode = "gt",
             output_dir  = "vid")
 
@@ -142,4 +150,4 @@ if __name__ == "__main__":
             displayTime = True,
             displayName = "traj",
             showOccluder = True,
-            fps = 60 )
+            fps = 30 )

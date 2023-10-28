@@ -67,7 +67,7 @@ class Visualizer(object):
 			sys.exit()
 
 
-		imgFile = "000001.jpg"
+		imgFile = "000001.png"
 		img = os.path.join(self.image_dir,imgFile)
 		print("image file" , img)
 		im =  cv2.imread(img,1)
@@ -93,7 +93,7 @@ class Visualizer(object):
 		self.colors = self.generate_colors
 		t=0
 
-		for img in sorted(glob.glob(os.path.join(self.image_dir,"*.jpg"))):
+		for img in sorted(glob.glob(os.path.join(self.image_dir,"*.png"))):
 			t+=1
 
 			im = cv2.imread(img,1)
@@ -104,7 +104,7 @@ class Visualizer(object):
 				except Exception as e:
 					print(str(traceback.format_exc()))
 			im=cv2.resize(im,(0,0),fx=self.imScale,fy=self.imScale)
-		
+
 			if displayTime:
 				cv2.putText(im,"%d" % t,(25,50),cv2.FONT_HERSHEY_PLAIN,self.imScale*6,[255, 255, 255], thickness = 3)
 			if displayName:
@@ -112,9 +112,9 @@ class Visualizer(object):
 				cv2.putText(im, text,(25,height - 25 ),cv2.FONT_HERSHEY_DUPLEX,self.imScale* 2,[255, 255, 255],  thickness = 2)
 
 			if t == 1:
-				cv2.imwrite("{}.jpg".format(self.outputNameNoExt), im)
+				cv2.imwrite("{}.png".format(self.outputNameNoExt), im)
 				im_mini = cv2.resize(im, (0,0), fx=0.25, fy=0.25)
-				cv2.imwrite("{}-mini.jpg".format(self.outputNameNoExt), im_mini)
+				cv2.imwrite("{}-mini.png".format(self.outputNameNoExt), im_mini)
 			self.out.write(im)
 		self.out.release()
 
